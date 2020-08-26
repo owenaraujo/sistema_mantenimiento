@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#" _msthash="1453933" _msttexthash="75387">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" _msthidden="A"
+    _msthiddenattr="1374854" _mstaria-label="320099">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    
+    
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/stock">Stock<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">equipos</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/links/add">agregar equipos</a>
+          <a class="dropdown-item" href="/links">inventario de equipos</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">productos</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/links/productos/addproduct">agregar productos</a>
+          <a class="dropdown-item" href="/links/productos/lista_productos">inventario de productos</a>
+        </div>
+      </li>
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Servicio Tecnico</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/links/servicio">Registrar Reparacion</a>
+          <a class="dropdown-item" href="/links/reparacionesP">En Reparacion</a>
+          <a class="dropdown-item" href="/links/reparados">Reparados</a>
+          <a class="dropdown-item" href="/links/retirados">Retirados</a>
+          <a class="dropdown-item" href="/links/historialDBispositivos">historial de eliminacion</a>
+        </div>
+        
+      </li>
+
+        
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">session</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/profile"> {{user.username}}</a>
+          <a class="dropdown-item" href="/logout">salir</a>
+        </div>
+      </li>
+
+    </ul>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Búsqueda" _mstplaceholder="127192">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit" _msthash="727987"
+        _msttexthash="127192">Búsqueda</button>
+    </form>
+    
+  </div>
+</nav>
