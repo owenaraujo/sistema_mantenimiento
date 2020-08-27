@@ -31,10 +31,23 @@ router.post('/servicio', async (req, res)=>{
         req.flash('success','Registrado')
         res.redirect('/links/reparacionesP');        
 }); 
+
 // vista en reparacion
 router.get('/reparacionesP',isLoggedIn, async (req,res) =>{
-    const service = await pool.query('SELECT * FROM servicio where user_id=user.id,local=1');
-        res.render('reparacionesP',{service});
+    let services = [];
+    // getting rol user
+    const userRol = await pool.query('SELECT rol FROM usuarios WHERE id = ? LIMIT 1',[req.user.id])
+    const {rol} = userRol[0];
+
+    // verify is adminstrator
+    if (rol == 'administrador') {
+        services = await pool.query('SELECT * FROM servicio where local=1');
+        res.render('reparacionesP',{services});
+        return
+    }   
+    
+    services = await pool.query('SELECT * FROM servicio where local=1 AND user_id=?',[req.user.id]);
+    res.render('reparacionesP',{services})
 });
 // reparado
 router.get('/reparados',isLoggedIn, async (req,res) =>{
