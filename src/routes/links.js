@@ -36,8 +36,8 @@ router.post('/servicio', async (req, res)=>{
 router.get('/reparacionesP',isLoggedIn, async (req,res) =>{
     let services = [];
     // getting rol user
-    const userRol = await pool.query('SELECT rol FROM usuarios WHERE id = ? LIMIT 1',[req.user.id])
-    const {rol} = userRol[0];
+    // const userRol = await pool.query('SELECT rol FROM usuarios WHERE id = ? LIMIT 1',[req.user.id])
+    const {rol,id} = req.user;
 
     // verify is adminstrator
     if (rol == 'administrador') {
@@ -46,7 +46,7 @@ router.get('/reparacionesP',isLoggedIn, async (req,res) =>{
         return
     }   
     
-    services = await pool.query('SELECT * FROM servicio where local=1 AND user_id=?',[req.user.id]);
+    services = await pool.query('SELECT * FROM servicio where local=1 AND user_id=?',[id]);
     res.render('reparacionesP',{services})
 });
 // reparado
