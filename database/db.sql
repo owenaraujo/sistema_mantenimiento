@@ -1,8 +1,8 @@
-CREATE DATABASE sistema_mantenimiento;
+CREATE DATABASE IF NOT EXISTS sistema_mantenimiento;
 
 USE sistema_mantenimiento;
 
-CREATE TABLE usuarios (
+CREATE TABLE IF NOT EXISTS usuarios (
   id INT(11) NOT NULL,
   username VARCHAR(16) NOT NULL,
   password VARCHAR(60) NOT NULL
@@ -22,7 +22,7 @@ INSERT INTO usuarios (id, username, password)
 SELECT * FROM usuarios;
 
 -- maquinas TABLE
-CREATE TABLE lista_maquinas (
+CREATE TABLE IF NOT EXISTS lista_maquinas (
   id INT(11) NOT NULL,
   tipo boolean (10) NOT NULL,
             nombre_cliente INT (5) NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE lista_maquinas (
             observaciones TEXT,
   user_id INT(11),
   create_at timestamp NOT NULL DEFAULT current_timestamp,
-  CONSTRAINT fk_listamaquina_user FOREIGN KEY(user_id) REFERENCES usuarios(id)
+  CONSTRAINT fk_maquina_user FOREIGN KEY(user_id) REFERENCES usuarios(id)
 );
 
 ALTER TABLE lista_maquinas
@@ -44,7 +44,7 @@ ALTER TABLE lista_maquinas
 DESCRIBE lista_maquinas;
 
 -- productos TABLE
-CREATE TABLE lista_productos (
+CREATE TABLE IF NOT EXISTS lista_productos (
   id INT(11) NOT NULL,
   producto VARCHAR (100) NOT NULL,
             cantidad INT (5) NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE lista_productos (
             medida TEXT,
   user_id INT(11),
   create_at timestamp NOT NULL DEFAULT current_timestamp,
-  CONSTRAINT fk_listruser FOREIGN KEY(user_id) REFERENCES usuarios(id)
+  CONSTRAINT fk_Productos_user FOREIGN KEY(user_id) REFERENCES usuarios(id)
 );
 
 ALTER TABLE lista_productos
@@ -67,19 +67,20 @@ ALTER TABLE lista_productos
 DESCRIBE lista_productos;
 
 -- SERVICIO TABLE
-CREATE TABLE servicio (
+CREATE TABLE IF NOT EXISTS servicio (
   id INT(11) NOT NULL,
   tipo VARCHAR (100) NOT NULL,
   cantidad INT (5) NOT NULL,
   nombre_cliente VARCHAR(100) NOT NULL,
   cedula VARCHAR(100) NOT NULL,
-  modelo TEXT,
-  marca TEXT,
+  modelo VARCHAR(20),
+  marca VARCHAR(20),
   falla TEXT,
   reparaciones_hechas TEXT,
+  local  boolean(10),
   user_id INT(11),
   create_at timestamp NOT NULL DEFAULT current_timestamp,
-  CONSTRAINT fk_user2 FOREIGN KEY(user_id) REFERENCES usuarios(id)
+  CONSTRAINT fk_servicio_user FOREIGN KEY(user_id) REFERENCES usuarios(id)
 );
 
 ALTER TABLE servicio
@@ -89,4 +90,23 @@ ALTER TABLE servicio
   MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
 
 DESCRIBE servicio;
+-- tabla herramientas
+CREATE TABLE IF NOT EXISTS herramientas (
+  id INT(11) NOT NULL,
+  tipo VARCHAR (100) NOT NULL,
+  cantidad INT (5) NOT NULL,
+  nombre VARCHAR(100) NOT NULL,
+  detalles VARCHAR(100) NOT NULL,
+  marca VARCHAR(20),
+  user_id INT(11),
+  create_at timestamp NOT NULL DEFAULT current_timestamp,
+  CONSTRAINT fk_herramientas_user FOREIGN KEY(user_id) REFERENCES usuarios(id)
+);
 
+ALTER TABLE herramientas
+  ADD PRIMARY KEY (id);
+
+ALTER TABLE herramientas
+  MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
+
+DESCRIBE herramientas;
