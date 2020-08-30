@@ -46,14 +46,7 @@
 
         
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">session</a>
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/profile"> {{user.username}}</a>
-          <a class="dropdown-item" href="/logout">salir</a>
-        </div>
-      </li>
+      
 
     </ul>
 
@@ -63,7 +56,17 @@
       <button class="btn btn-secondary my-2 my-sm-0" type="submit" _msthash="727987"
         _msttexthash="127192">Búsqueda</button>
     </form>
-    
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">session</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/profile"> {{user.username}}</a>
+          <a class="dropdown-ite
+          m" href="/logout">salir</a>
+        </div>
+      </li>
+    </div>
   </div>
 </nav>
 {{>mensajes}}

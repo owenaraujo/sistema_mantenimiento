@@ -34,7 +34,7 @@ router.post('/addherramienta', async (req, res)=>{
 
 // stock
 router.get('/stock', (req, res)=>{
-    res.render('stock')
+    res.render('stock/stock')
 });
 // vistas stock
 // repuestos

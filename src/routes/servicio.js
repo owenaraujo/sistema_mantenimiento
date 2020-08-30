@@ -84,7 +84,17 @@ router.get('/detallesDispositivos/:id',isLoggedIn, async (req,res) =>{
     res.render('servicio/detallesDispositivos',{link:dispositivo[0]});
     console.log(req.body)
         
-});       
+});      
+// detalles reparaciones
+router.get('/detallesReparaciones/:id',isLoggedIn, async (req,res) =>{
+    const {id} = req.params;
+     const dispositivo =
+      await pool.query('SELECT * FROM reparaciones_servicio WHERE  reparacio_servicio_id= ?',[id]);
+      const nombre_cliente = await pool.query('SELECT * FROM servicio WHERE id= ?',[id]);
+    res.render('servicio/detallesReparaciones',{dispositivo, nombre_cliente});
+    console.log(req.body)
+        
+});        
 
 // historial de eliminaciones
 router.get('/historialDBispositivos',isLoggedIn, async (req,res) =>{
@@ -92,20 +102,23 @@ router.get('/historialDBispositivos',isLoggedIn, async (req,res) =>{
         res.render('servicio/historialBDispositivos',{services});
 });
 // editar dispositivo
-router.get('/editDispositivo/:id',isLoggedIn, async (req,res) =>{
+router.get('/reparar/:id',isLoggedIn, async (req,res) =>{
 const {id} = req.params;
- const dispositivo = await pool.query('SELECT * FROM servicio WHERE  ID= ?',[id]);
+ const dispositivo = await pool.query('SELECT id FROM servicio WHERE  ID= ?',[id]);
 res.render('servicio/editDispositivo',{link:dispositivo[0]});
     
 });
-router.post('/editDispositivo/:id',async (req, res)=>{
+router.post('/reparar/:id',async (req, res)=>{
 const {id}= req.params;
 const {
-reparaciones_hechas} = req.body;
-const newservice ={
-reparaciones_hechas
+    reparacion
+} = req.body
+const reparaciones ={
+reparacion,
+reparacio_servicio_id: id
 };
-await pool.query('UPDATE  servicio set ?, local = 2 WHERE  ID= ?',[newservice, id])
+await pool.query('  INSERT INTO reparaciones_servicio set ?',[reparaciones, id]),
+await pool.query('UPDATE servicio SET local = 2  WHERE  id= ?',[id]);
 req.flash('success','equipo Reparado')
 
 res.redirect('/servicio')

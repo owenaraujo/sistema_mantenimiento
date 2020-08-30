@@ -5,7 +5,6 @@ const expresiones = {
   correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
   telefono: /^\d{7,14}$/, // 7 a 14 numeros.
   cod: /^([a-z]{2})\-([\d]{1})/, // 7 a 14 numeros.
-
 };
 
 const validateUser = (el) => {
@@ -37,21 +36,27 @@ const validateEmpty = (el) => {
   msg.textContent = "";
 };
 
+const replaceNumber = (el) => {
+  let str = el.value;
+  el.value = str.replace(/\D/g, "").replace(/^([0-9]{2})/, "+$1 ");
+};
 
 const validateCod = (el) => {
-  // let msg = document.querySelector("#msgCod");
+  let msg = document.querySelector("#msgCod");
+  let str = el.value;
+  el.value = str.replace(/^([a-z]{2})([0-9]{2})/, "$1-$2");
 
-  // if (el.value === "") {
-  //   msg.textContent = "Completa este campo";
-  //   return;
-  // }
+  if (el.value === "") {
+    msg.textContent = "Completa este campo";
+    msg.classList.remove("d-none")
+    return;
+  }
 
-  // if (!expresiones.cod.test(el.value)) {
-  //   msg.textContent = "Formato no valido";
-  //   return;
-  // }
-  // msg.textContent = "";
-let str = el.value;
-  el.value = str
-    .replace(/^([a-z]{2})([0-9]{2})/, "$1-$2")
+  if (!expresiones.cod.test(el.value)) {
+    msg.textContent = "Formato no valido";
+    msg.classList.remove("d-none")
+    return;
+  }
+  msg.classList.add("d-none")
+  msg.textContent = "";
 };

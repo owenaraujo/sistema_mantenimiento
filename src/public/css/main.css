@@ -1,11 +1,26 @@
 body {
-    height: 100vh;
+  height: 100vh;
 }
 
 .hv-100 {
-    height: 100vh;
+  height: 100vh;
 }
 
 .font-small {
-    font-size: .75rem;
+  font-size: 0.74rem;
+}
+
+.form-control {
+  border-width: 1.5px;
+  border-radius: 0.75rem;
+}
+
+.form-control:hover {
+  box-shadow: 2px 2px 0.75rem -2px rgba(0, 0, 0, 0.308);
+}
+.form-control:focus {
+  box-shadow: 2px 2px 0.75rem -2px rgba(0, 0, 0, 0.308);
+}
+.btn {
+  border-radius: 1rem;
 }

@@ -68,5 +68,5 @@ app.listen(app.get('port'), () => {
   console.log('Server is in port', app.get('port'));
 });
 app.use(function (req, res, next) {
-  res.status(404).render("./links/error");
+  res.status(404).render("./error");
 });

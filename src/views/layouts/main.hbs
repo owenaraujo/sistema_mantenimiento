@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sistema de mantenimiento</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    {{!-- <link rel="stylesheet" href="/md/bootstrap.min.css"> --}}
-    {{!-- <link rel="stylesheet" href="/css/main.css"> --}}
-    <link rel="stylesheet" href="/md/bootstrap.css">
-    <link rel="stylesheet" href="/md/mdb.css">
-    <link rel="stylesheet" href="/md/styles.css">
+    <link rel="stylesheet" href="/md/bootstrap.min.css">
+    <link rel="stylesheet" href="/md/mdb.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    {{!-- <link rel="stylesheet" href="/md/fontawesone.css"> --}}
+    <link rel="stylesheet" href="/md/addons/datatables.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
 
 
 
@@ -20,10 +21,17 @@
     {{{body}}}
 <script src="/md/jquery.js"></script>
 <script src="/md/popper.js"></script>
-{{!-- <script src="/md/bootstrap.min.js"></script>   --}}
-<script src="/md/bootstrap.js"></script>  
-<script src="/md/mdb.js"></script>  
+<script src="/md/bootstrap.min.js"></script>  
+<script src="/md/mdb.min.js"></script>  
+{{!-- <script src="/md/fontawesone.js"></script> --}}
+<script src="/md/addons/datatables.min.js"></script>
 <script src="/css/validacion.js"></script>  
+<script>
+  $(document).ready(function () {
+    $('#dtBasicExample').DataTable();
+    $('.dataTables_length').addClass('bs-select');
+  });
+</script>
  
 </body>
 </html>

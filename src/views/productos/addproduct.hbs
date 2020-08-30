@@ -6,39 +6,39 @@
     <div class="row">
         <div class="col-sm-12 col-lg-6 col-xl-4  mx-auto">
             <form action="/productos/addproduct" method="POST" class="card card-body">
-                <div>
+                <div class="form-group">
                     <h1 class="mb-4"> Registro de Productos</h1>
                 </div>
 
-                <div>
-                    <input autocomplete="off" type="text" name="producto" class="form-control mb-4" placeholder="producto">
+                <div class="form-group">
+                    <input autocomplete="off" type="text" name="producto" class="form-control" placeholder="producto">
                 </div>
-                <div>
-                    <input autocomplete="off" type="text" onkeyup="validateCod(this)" name="codificacion" class="form-control mb-4" placeholder="codificacion">
-                            <label class="invalid-feedback" id="msgCod"></label>
+                <div class="form-group">
+                    <input autocomplete="off" type="text" onkeyup="validateCod(this)" name="codificacion" class="form-control" placeholder="codificacion">
+                            <label class="text-danger font-small d-none" id="msgCod"></label>
                 </div>
 
-                <div class="">
-                    <input type="text" name="peso" class="form-control mb-4" placeholder="peso">
-                    <select class="custom-select form-control mb-4" _msthash="2736318" _msttexthash="1130220"
+                <div class="form-group">
+                    <input type="text" name="peso" class="form-control mb-3" placeholder="peso">
+                    <select class="custom-select form-control" _msthash="2736318" _msttexthash="1130220"
                         name="medida">
                         <option value="Kg">Kg</option>
                         <option value="Litros">Litros</option>
                     </select>
                 </div>
-                <div>
-                    <input type="text" name="precio_por_lote" class="form-control mb-4" placeholder="precio por lote">
+                <div class="form-group">
+                    <input type="text" name="precio_por_lote" class="form-control" placeholder="precio por lote">
                 </div>
-                <div>
-                    <input type="text" name="precio_unitario" class="form-control mb-4" placeholder="precio unitario">
+                <div class="form-group">
+                    <input type="text" name="precio_unitario" class="form-control" placeholder="precio unitario">
                 </div>
-                <div>
-                    <input type="text" name="cantidad" class="form-control mb-4" placeholder="cantidad">
+                <div class="form-group">
+                    <input type="text" name="cantidad" class="form-control" placeholder="cantidad">
                 </div>
 
 
                 <div class="btn-group" role="group" aria-label="Ejemplo básico" _mstaria-label="254332">
-                    <button class="btn btn-primary btn-lg">REGISTRAR</button>
+                    <button class="btn btn-primary btn-lg mx-auto">REGISTRAR</button>
                 </div>
 
             </form>

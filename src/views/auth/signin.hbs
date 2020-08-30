@@ -1,3 +1,4 @@
+{{>mensajes}}
 <div class="container p-4">
     <div class="row">
         <div class="col-md-4 mx-auto">
@@ -40,11 +41,12 @@
                                                     <div class="md-form form-sm mb-5">
                                                         <i class="fas fa-user prefix"></i>
                                                         <input required autocomplete="off" type="text"
-                                                            id="modalLRInput10" name="username"
+                                                            id="modalLRInput10" onkeyup="validateUser(this)" name="username"
                                                             class="form-control form-control-sm validate">
                                                         <label data-error="wrong" data-success="right"
                                                             for="modalLRInput10">Ingrese su Usuario</label>
                                                     </div>
+                                                    <label id="msgUser"></label>
 
                                                     <div class="md-form form-sm mb-4">
                                                         <i class="fas fa-lock prefix"></i>
@@ -56,7 +58,7 @@
                                                     </div>
                                                     <div class="text-center mt-2">
                                                         <button class="btn btn-info">INICIAR SESSION <i
-                                                                class="fas fa-sign-in ml-1"></i></button>
+                                                                class="fas fa-check-circle ml-1"></i></button>
                                                     </div>
                                                 </div>
                                                 <!--Footer-->
@@ -88,14 +90,14 @@
                                                 </div>
                                                 <div class="md-form form-sm mb-5">
                                                     <i class="fas fa-phone prefix"></i>
-                                                    <input name="movil" required autocomplete="off" type="text" id="modalLRInput12"
+                                                    <input onkeyup="replaceNumber(this)" name="movil" required autocomplete="off" type="text" id="modalLRInput12"
                                                         class="form-control form-control-sm validate">
                                                     <label data-error="wrong" data-success="right"
                                                         for="modalLRInput12">Ingrese Numero de Telefono Móvil</label>
                                                 </div>
                                                 <div class="md-form form-sm mb-5">
                                                     <i class="fas fa-phone-square prefix"></i>
-                                                    <input name="fijo" required autocomplete="off" type="text" id="modalLRInput12"
+                                                    <input onkeyup="replaceNumber(this)" name="fijo" required autocomplete="off" type="text" id="modalLRInput12"
                                                         class="form-control form-control-sm validate">
                                                     <label data-error="wrong" data-success="right"
                                                         for="modalLRInput12">Ingrese Numero Telefonico Fijo</label>
@@ -134,7 +136,7 @@
 
                                                 <div class="text-center form-sm mt-2">
                                                     <button class="btn btn-info">Registrar Usuario <i
-                                                            class="fas fa-sign-in ml-1"></i></button>
+                                                            class="fas fa-check-circle ml-1"></i></button>
                                                 </div>
 
                                             </div>
