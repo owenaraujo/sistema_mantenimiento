@@ -15,6 +15,10 @@ router.post('/signup', passport.authenticate('local.signup', {
   failureRedirect: '/signup',
   failureFlash: true
 }));
+// prueba signin
+router.get('/signiin', (req, res) => {
+  res.render('auth/signiin');
+});
 
 // SINGIN
 router.get('/signin',isNotLoggedIn, (req, res) => {

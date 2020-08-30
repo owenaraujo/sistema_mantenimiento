@@ -1,0 +1,23 @@
+    {{>navegacion}}
+
+<div class="container pt-4">
+
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <form action="/servicio/editDIspositivo/{{link.id}}" method="POST" class="card card-body" >
+                    <div>
+                        <h1 class="mb-4">Edición de Maquinaria</h1>
+                    </div>
+                    
+                    <div>
+                        <input type="text" value="{{link.reparaciones_hechas}}" name="reparaciones_hechas" class="form-control mb-4" placeholder="Reparaciones Hechas">
+                    </div>  
+                    <div class="btn-group" role="group" aria-label="Ejemplo básico" _mstaria-label="254332">
+                        <button class="btn btn-primary btn-lg" >editar</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+<div class="container p-4"></div>

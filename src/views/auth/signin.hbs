@@ -1,26 +1,167 @@
 <div class="container p-4">
     <div class="row">
         <div class="col-md-4 mx-auto">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h1>iniciar session</h1>
+            <div class="">
+
+                <div>
+
+                    <!--Modal: Login / Register Form-->
+                    <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog cascading-modal" role="document">
+                            <!--Content-->
+                            <div class="modal-content">
+
+                                <!--Modal cascading tabs-->
+                                <div class="modal-c-tabs">
+
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i
+                                                    class="fas fa-user mr-1"></i>
+                                                Iniciar Sessión</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
+                                                    class="fas fa-user-plus mr-1"></i>
+                                                Registrar</a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- Tab panels -->
+                                    <form action="/signin" method="POST">
+                                        <div class="tab-content">
+                                            <!--Panel 7-->
+                                            <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                                                <!--Body-->
+                                                <div class="modal-body mb-1">
+                                                    <div class="md-form form-sm mb-5">
+                                                        <i class="fas fa-user prefix"></i>
+                                                        <input required autocomplete="off" type="text"
+                                                            id="modalLRInput10" name="username"
+                                                            class="form-control form-control-sm validate">
+                                                        <label data-error="wrong" data-success="right"
+                                                            for="modalLRInput10">Ingrese su Usuario</label>
+                                                    </div>
+
+                                                    <div class="md-form form-sm mb-4">
+                                                        <i class="fas fa-lock prefix"></i>
+                                                        <input required autocomplete="off" type="password"
+                                                            name="password" id="modalLRInput11"
+                                                            class="form-control form-control-sm validate">
+                                                        <label data-error="wrong" data-success="right"
+                                                            for="modalLRInput11">Ingrese su Contraseña</label>
+                                                    </div>
+                                                    <div class="text-center mt-2">
+                                                        <button class="btn btn-info">INICIAR SESSION <i
+                                                                class="fas fa-sign-in ml-1"></i></button>
+                                                    </div>
+                                                </div>
+                                                <!--Footer-->
+
+                                            </div>
+
+                                    </form>
+                                    <!--/.Panel 7-->
+
+                                    <!--Panel 8-->
+                                    <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                                        <!--Body-->
+                                        <form action="/signup" method="POST">
+                                            <div class="modal-body">
+                                                <div class="md-form form-sm mb-5">
+                                                    <i class="fas fa-user prefix"></i>
+                                                    <input name="fullname" required autocomplete="off" type="text" id="modalLRInput12"
+                                                        class="form-control form-control-sm validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput12">Ingrese Nombre y Apellido</label>
+                                                </div>
+                                                <div class="md-form form-sm mb-5">
+                                                    <i class="fas fa-fingerprint prefix"></i>
+                                                    <input name="cedula" required autocomplete="off" type="text" id="modalLRInput12"
+                                                        class="form-control form-control-sm validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput12">Cedula de Identidad</label>
+                                                </div>
+                                                <div class="md-form form-sm mb-5">
+                                                    <i class="fas fa-phone prefix"></i>
+                                                    <input name="movil" required autocomplete="off" type="text" id="modalLRInput12"
+                                                        class="form-control form-control-sm validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput12">Ingrese Numero de Telefono Móvil</label>
+                                                </div>
+                                                <div class="md-form form-sm mb-5">
+                                                    <i class="fas fa-phone-square prefix"></i>
+                                                    <input name="fijo" required autocomplete="off" type="text" id="modalLRInput12"
+                                                        class="form-control form-control-sm validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput12">Ingrese Numero Telefonico Fijo</label>
+                                                </div>
+                                                <div class="md-form form-sm mb-5">
+                                                    <i class="fas fa-envelope prefix"></i>
+                                                    <input required autocomplete="off" type="email" id="modalLRInput12"
+                                                        class="form-control form-control-sm validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput12">Your
+                                                        email</label>
+                                                </div>
+                                                <div class="md-form form-sm mb-5">
+                                                    <i class="fas fa-user prefix"></i>
+                                                    <input name="username" required autocomplete="off" type="text" id="modalLRInput12"
+                                                        class="form-control form-control-sm validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput12">Ingrese Nombre de Usuario</label>
+                                                </div>
+
+                                                <div class="md-form form-sm mb-5">
+                                                    <i class="fas fa-lock prefix"></i>
+                                                    <input name="password" required autocomplete="off" type="password" id="modalLRInput13"
+                                                        class="form-control form-control-sm validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput13">Ingrese contraseña</label>
+                                                </div>
+
+                                                <div class="md-form form-sm mb-4">
+                                                    <i class="fas fa-lock prefix"></i>
+                                                    <input type="password" id="modalLRInput14"
+                                                        class="form-control form-control-sm validate">
+                                                    <label data-error="wrong" data-success="right"
+                                                        for="modalLRInput14">Repita la Contraseña</label>
+                                                </div>
+
+                                                <div class="text-center form-sm mt-2">
+                                                    <button class="btn btn-info">Registrar Usuario <i
+                                                            class="fas fa-sign-in ml-1"></i></button>
+                                                </div>
+
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                    <!--/.Panel 8-->
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--/.Content-->
+                    </div>
                 </div>
-                <div class="card-body">
-                    <form action="/signin" method="POST">
-                        <div class="form-group">
-                            <input class="form-control" autofocus type="text" name="username" placeholder="USUARIO">
+                <!--Modal: Login / Register Form-->
+                <div class="container p-9">
+                    <div class="container p-5">
+
+                        <div class="text-center">
+                            <a href="" class="btn btn-default btn-rounded my-4" data-toggle="modal"
+                                data-target="#modalLRForm">
+                                INICIAR</a>
                         </div>
-                        <div class="form-group">
-                            <input class="form-control"  type="password" name="password" placeholder="CONTRASEÑA">
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-success btn-block">
-                                iniciar session
-                            </button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>

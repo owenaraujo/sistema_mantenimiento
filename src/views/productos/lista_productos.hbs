@@ -1,0 +1,38 @@
+    {{>navegacion}}
+
+<div class="container p-4">
+  <div class=" row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+    {{#each productos}}
+    <div class="col mb-3">
+      <div class="card md-3">
+        <h3 class="card-header" _msthash="1543503" _msttexthash="151151">Codigo: {{codificacion}}</h3>
+        <div class="card-body">
+          <h5 class="card-title" _msthash="1919515" _msttexthash="852384">Nombre: {{producto}} </h5>
+          <h6 class="card-subtitle text-muted" _msthash="1921049" _msttexthash="870571"> Cantidad: {{cantidad}}</h6>
+          <hr>
+          <h6 class="card-subtitle text-muted" _msthash="1921049" _msttexthash="870571"> Peso o Volumen: {{peso}}
+            {{medida}}</h6>
+
+        </div>
+        <div class="card-body">
+          <p class="card-text" _msthash="1885689" _msttexthash="8501909">Precio: {{precio_por_lote}}</p>
+          <p class="card-text" _msthash="1885689" _msttexthash="8501909">Precio unitario: {{precio_unitario}}</p>
+        </div>
+        <div class="card-body">
+          <a href="/productos/editproduct/{{id}}" class="btn btn-warning">editar</a>
+          <a href="/productos/delete/{{id}}" class="btn btn-danger">eliminar</a>
+        </div>
+        <div class="card-footer text-muted" _msthash="1664169" _msttexthash="144235"> Creado: {{timeago create_at}}
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <div class="col-md-4 mx-auto">
+      <div class="card card-body text-center">
+        <p>no hay productos registrados</p>
+        <a class="btn btn-outline-primary" href="/productos/addproduct"> Registrar</a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

@@ -5,3 +5,7 @@ body {
 .hv-100 {
     height: 100vh;
 }
+
+.font-small {
+    font-size: .75rem;
+}

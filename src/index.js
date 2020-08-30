@@ -53,8 +53,12 @@ app.use((req, res, next) => {
 
 // Routes
 app.use(require('./routes/index'));
+app.use('/productos',require('./routes/productos'));
+app.use('/servicio',require('./routes/servicio'));
+app.use('/piezas',require('./routes/piezas'));
+app.use('/herramientas',require('./routes/herramientas'));
 app.use(require('./routes/authentication'));
-app.use('/links', require('./routes/links'));
+app.use('/equipos', require('./routes/equipos'));
 
 // Public
 app.use(express.static(path.join(__dirname, 'public')));
