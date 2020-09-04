@@ -13,14 +13,21 @@ body {
 .form-control {
   border-width: 1.5px;
   border-radius: 0.75rem;
+  border-color: #bdbcbc;
 }
 
 .form-control:hover {
   box-shadow: 2px 2px 0.75rem -2px rgba(0, 0, 0, 0.308);
+  border-color: #bdbcbc;
 }
 .form-control:focus {
   box-shadow: 2px 2px 0.75rem -2px rgba(0, 0, 0, 0.308);
+  border-color: #bdbcbc;
 }
 .btn {
   border-radius: 1rem;
+}
+
+.modal .modal-full-height {
+  top: 56px;
 }

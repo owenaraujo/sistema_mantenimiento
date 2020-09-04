@@ -60,3 +60,4 @@ const validateCod = (el) => {
   msg.classList.add("d-none")
   msg.textContent = "";
 };
+

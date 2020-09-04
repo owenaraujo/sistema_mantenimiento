@@ -1,14 +1,68 @@
     {{>navegacion}}
 
-<div class="container p-4">
-  <div class="rows">
-    <div class="col md-3">
-      <form action="submit">
-  <button formaction="/addherramienta" class="btn btn-danger" type="submit">agregar una herramienta</button>
-</form>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#centralModalSm">
+  Launch demo modal
+</button>
+
+<!-- Central Modal Small -->
+<div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Change class .modal-sm to change the size of the modal -->
+  <div class="modal-dialog modal-sm" role="document">
+
+
+    <form action="/stock/addherramienta" method="POST">
+      <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">Agrega una herramienta</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+
+
+    
+        
+    
+                <div class="form-group">
+                    <select class="form-control" _msthash="2736318" _msttexthash="1130220" name="tipo" id=""
+                        class="mb-4">
+                        <option selected="" _istranslated="1">tipo de dispositivo</option>
+                        <option value="1">movil</option>
+                        <option value="2">tablet</option>
+                        <option value="3">computadora de mesa</option>
+                        <option value="4">laptop</option>
+                        <option value="5">consola de videojuegos</option>
+                    </select>
+
+                </div>
+                <div>
+                    <input type="text" name="nombre" class="form-control mb-4" placeholder="nombre de la herramienta">
+                </div>
+                <div>
+                    <input type="text" name="detalles" class="form-control mb-4" placeholder="detalles">
+                </div>
+                <div>
+                    <input type="text" name="cantidad" class="form-control mb-4" placeholder="cantidad">
+                
+            </div>
+       
+    
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">cerrar</button>
+        <button class="btn btn-primary btn-sm">Guardar</button>
+      </div>
     </div>
+    </form>
   </div>
 </div>
-
+<!-- Central Modal Small -->
 
 

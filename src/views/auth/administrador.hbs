@@ -1,0 +1,28 @@
+
+{{>navegacion}}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">estado</th>
+      <th scope="col">nombre de usuario</th>
+      <th scope="col">cedula</th>
+      <th scope="col">Column heading</th>
+      <th scope="col">accion</th>
+    </tr>
+  </thead>
+  <tbody>
+      <form action="/signup" method="POST">
+    {{#each usuarios}}  
+    <tr class="table-active">
+      <th scope="row">{{estado}}</th>
+      <td>{{id}}</td>
+      <td>{{username}}</td>
+      <td>{{nombre}}</td>
+      <td>
+          <a href="/profile/administracion/activar/{{id}}" class="btn btn-warning">activar</a>
+          <a href="/profile/administracion/desactivar/{{id}}" class="btn btn-danger">desactivar</a>
+      </td>
+    </tr>   
+{{/each}}</form>
+  </tbody>
+</table>
