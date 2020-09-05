@@ -31,3 +31,11 @@ body {
 .modal .modal-full-height {
   top: 56px;
 }
+.show {
+  display: block;
+  padding-left: 0px;
+}
+
+.modal-dialog {
+  margin: 0px;
+}
